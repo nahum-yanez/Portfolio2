@@ -18,15 +18,26 @@ body {
   position: sticky;
   top: 0;
   background: #111;
-  padding: 12px 16px;
+  padding: 14px 18px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 1000;
+
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.35);
 }
 
+/* TITLE */
 .site-title {
-  font-size: 1.3rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+}
+
+.site-title span {
+  font-weight: 400;
+  opacity: 0.8;
 }
 
 /* NAV ICON */
@@ -34,17 +45,24 @@ body {
   font-size: 1.7rem;
   cursor: pointer;
   user-select: none;
+  padding: 6px 10px;
+  border-radius: 8px;
 }
 
-/* NAV */
+.nav-icon:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+/* NAV (MOBILE) */
 .nav {
   display: none;
   position: absolute;
-  top: 56px;
+  top: 58px;
   right: 16px;
   background: #111;
-  padding: 10px 16px;
-  border-radius: 10px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .nav a {
@@ -62,6 +80,19 @@ body {
 /* SHOW NAV */
 .nav.show {
   display: block;
+  animation: fadeDown 0.2s ease-out;
+}
+
+/* ANIMATION */
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* MAIN */
@@ -87,6 +118,7 @@ body {
     position: static;
     background: none;
     padding: 0;
+    box-shadow: none;
     gap: 16px;
   }
 
